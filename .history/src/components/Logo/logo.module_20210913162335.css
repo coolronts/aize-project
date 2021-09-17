@@ -1,0 +1,15 @@
+.logoContainer {
+    position: relative;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 12px 12 12px 12;
+    background-color: #dd1c1a;
+    z-index: 1;
+}
+
+.icon {
+    position: absolute;
+    font-size: 12px;
+    color: black;
+    z-index: 5;
+}

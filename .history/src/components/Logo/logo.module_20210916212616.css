@@ -1,0 +1,137 @@
+.logoContainer {
+    position: relative;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 18px;
+    z-index: 1;
+    margin-right: 18px;
+}
+
+.logoContainer:hover {
+    box-shadow: 0 5px 10px rgba(146, 61, 36, 0.05), 0 15px 40px rgba(165, 83, 63, 0.2);
+}
+
+.icon {
+    position: absolute;
+    font-size: 24px;
+    color: black;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto auto auto;
+}
+
+.badge {
+    position: absolute;
+    background-color: #dd1c1a;
+    color: white;
+    font-weight: bold;
+    font-size: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    top: -6px;
+    line-height: 18px;
+}
+
+.searchContainer {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    padding: 2% 20%;
+    position: fixed;
+    background: rgba( 255, 255, 255, 1);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    z-index: 20;
+    text-align: center;
+}
+
+.searchContainer>input {
+    margin-top: 5%;
+    border-radius: 12px;
+    outline: none;
+    border: 1px solid black;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+.suggestion {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.imageContainer {
+    padding: 20px;
+}
+
+.imageContainer>img {
+    width: 100px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 60%;
+}
+
+.name {
+    font-size: 18px;
+}
+
+.price {
+    margin-top: 5px;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 12px;
+}
+
+.suggestion>img {
+    width: 5%;
+    border-radius: 12px;
+}
+
+hr {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .logoContainer {
+        margin-right: 0px;
+    }
+    .icon {
+        font-size: 16px;
+    }
+    h3 {
+        display: none;
+    }
+    h3>span {
+        display: block;
+    }
+    .searchContainer {
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 20px 20px;
+    }
+    .suggestion {
+        align-items: center;
+        margin-bottom: 3px;
+        margin-top: 10px;
+        width: 100%;
+        margin-left: 0%;
+    }
+}

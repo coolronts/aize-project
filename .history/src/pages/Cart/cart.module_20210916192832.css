@@ -1,0 +1,51 @@
+strong {
+    font-weight: 600;
+}
+
+.container {
+    padding: 24px 124px 24px 124px;
+    display: flex;
+}
+
+.shoppingBag {
+    width: 80%;
+    padding: 12px 24px 12px 24px;
+}
+
+.signInContainer {
+    margin-bottom: 12px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart {
+    padding-top: 46px;
+}
+
+.orderSummary {
+    padding: 12px 24px 12px 24px;
+    width: 50%;
+}
+
+.promoCode {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #dd1c1a;
+    padding: 12px 12px 12px 12px;
+    width: 100%;
+    text-align: center;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.PayButtonContainer>button {
+    margin-top: 20px;
+    width: 100%;
+}

@@ -1,0 +1,30 @@
+header {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 12px 36px 12px 36px;
+    display: flex;
+}
+
+.logoContainer {
+    padding-right: 48px;
+    color: black;
+    font-size: 24px;
+    font-weight: bolder;
+    text-shadow: 2px 2px gray;
+}
+
+.cartIcon {
+    font-size: 56px;
+    align-self: stretch;
+}
+
+.menu>li {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: crimson;
+}
+
+.menu>ul>li:hover {
+    border-bottom: 5px solid crimson;
+    transition: 0.1s linear;
+}

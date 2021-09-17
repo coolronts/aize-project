@@ -1,0 +1,24 @@
+.logoContainer {
+    position: relative;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 18px;
+    z-index: 1;
+    margin-right: 18px;
+}
+
+.icon {
+    padding: 12px;
+    font-size: 24px;
+    color: black;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto auto auto;
+}
+
+.icon:hover {
+    box-shadow: 0 5px 10px rgba(146, 61, 36, 0.05), 0 15px 40px rgba(165, 83, 63, 0.2);
+}
