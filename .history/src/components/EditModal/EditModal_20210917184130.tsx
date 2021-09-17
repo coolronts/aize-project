@@ -38,18 +38,23 @@ const EditModal: React.FunctionComponent = () => {
     const save = ()=>{
       updateIsLoading(true)
       if(edit==='name' && typeof(newValue)==='string'){
+        console.log(edit)
         selectedProduct.name = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='description' && typeof(newValue)==='string'){
+        console.log(edit)
         selectedProduct.description = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='price' && typeof(newValue)==='number'){
+        console.log(edit)
         selectedProduct.price = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='discount' && typeof(newValue)==='number'){
+        console.log(edit)
         selectedProduct.discount = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='image' && typeof(newValue)==='string'){
+        console.log(edit)
         selectedProduct.defaultImage = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }

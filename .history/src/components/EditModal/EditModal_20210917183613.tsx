@@ -3,7 +3,7 @@ import styles from './editModal.module.css'
 import {MdCancel} from 'react-icons/md'
 
 //imageToBase64 handler function
-import {imgToBase64} from '../../handlerFunctions'
+import {imgToBase64} from '../../handler'
 
 //context
 import CommonContext from '../../context/common'
@@ -30,33 +30,45 @@ const EditModal: React.FunctionComponent = () => {
     },[edit])
 
 
-    const uploadImage = async (event:any)=>{
-      await imgToBase64(event)
-      .then(data=>setNewValue(data))
+    const uploadImage =(event:any)=>{
+      let file = event.target.files[0];
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        if(typeof(reader.result)==='string'){setNewValue(reader.result)}
+      };
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+      };
     }
     
     const save = ()=>{
       updateIsLoading(true)
       if(edit==='name' && typeof(newValue)==='string'){
+        console.log(edit)
         selectedProduct.name = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='description' && typeof(newValue)==='string'){
+        console.log(edit)
         selectedProduct.description = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='price' && typeof(newValue)==='number'){
+        console.log(edit)
         selectedProduct.price = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='discount' && typeof(newValue)==='number'){
+        console.log(edit)
         selectedProduct.discount = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }else if(edit==='image' && typeof(newValue)==='string'){
+        console.log(edit)
         selectedProduct.defaultImage = newValue
         Put.updateProduct(selectedProduct, selectedProduct.id)
       }
       updateProducts()
       updateIsEdit('')
-      setNewValue('') 
       updateIsLoading(false)
+      setNewValue('') 
     }
 
     return( 
