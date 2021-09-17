@@ -27,6 +27,7 @@ const AddModal: React.FunctionComponent = () => {
     updateIsLoading(true)
     Post.addProduct(data)
     updateAdd(false)
+    updateIsLoading(false)
   };
 
   const uploadImage = async (event:any)=>{
