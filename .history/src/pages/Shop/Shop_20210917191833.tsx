@@ -33,7 +33,7 @@ const Shop: React.FunctionComponent = () => {
       {(add) && (<AddModal/>)}
       {(edit) && (<EditModal/>)}
       {(!isLoading) && (
-        <div className={`styles.container ${(add||edit) && "styles.scrollOff"}`}>
+        <div className={`styles.container ${(add||edit) ? "active" : ""}`}>
           {(role==='ADMIN' && !add) && (<button type="button" onClick={() =>updateIsAdd(true)} className={styles.addButton}>Add Product</button>)}
           
           <div className={styles.list}>

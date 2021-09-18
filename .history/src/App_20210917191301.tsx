@@ -12,7 +12,7 @@ import {UserContextProvider} from './context/user'
 import {CommonContextProvider} from './context/common'
 
 //interface
-import {ProductCartType, IProduct} from './utils/interfaces'
+import {ProductCartType, IProduct} from './interfaces'
 
 //api
 import {Get, Delete} from './api/api'

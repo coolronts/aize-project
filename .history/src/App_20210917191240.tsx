@@ -12,14 +12,13 @@ import {UserContextProvider} from './context/user'
 import {CommonContextProvider} from './context/common'
 
 //interface
-import {ProductCartType, IProduct} from './utils/interfaces'
+import {ProductCartType, IProduct} from './interfaces'
 
 //api
 import {Get, Delete} from './api/api'
 
 const App: React.FunctionComponent = () => {
   //States
-  
   //user States
   const [id, setId] = useState<number|null>(null)
   const [role, setRole]= useState<'ADMIN'|'CUSTOMER'|null>(null)

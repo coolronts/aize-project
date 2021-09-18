@@ -12,14 +12,13 @@ import {UserContextProvider} from './context/user'
 import {CommonContextProvider} from './context/common'
 
 //interface
-import {ProductCartType, IProduct} from './utils/interfaces'
+import {ProductCartType, IProduct} from './interfaces'
 
 //api
 import {Get, Delete} from './api/api'
 
 const App: React.FunctionComponent = () => {
   //States
-  
   //user States
   const [id, setId] = useState<number|null>(null)
   const [role, setRole]= useState<'ADMIN'|'CUSTOMER'|null>(null)
@@ -55,14 +54,18 @@ const App: React.FunctionComponent = () => {
     updateIsLoading(false)
   }
 
+  const DeleteProduct = (id:number)=>{
+    updateIsLoading(true)
+    Delete.deleteProduct(id)
+    .then(() => getAllProducts())
+  }
+
   const addUser = (_id:number) =>{
     updateIsLoading(true)
     setId(()=>_id);
     (_id%2===0) ? setRole(()=>'CUSTOMER') : setRole(()=>'ADMIN')
     updateIsLoading(false)
   }
-
-  const addCart = async (_cart:ProductCartType[])=>{setProducts(()=>(_cart))}
 
   const addProduct = (_id:number, _quantity:number) =>{
     const foundProduct = products.find(x => x.id === _id)
@@ -71,11 +74,7 @@ const App: React.FunctionComponent = () => {
     setCartQty(()=>cartQty+1)
   }
 
-  const DeleteProduct = (id:number)=>{
-    updateIsLoading(true)
-    Delete.deleteProduct(id)
-    .then(() => getAllProducts())
-  }
+  const addCart = async (_cart:ProductCartType[])=>{setProducts(()=>(_cart))}
 
   useEffect(() =>{
     if(id != null){

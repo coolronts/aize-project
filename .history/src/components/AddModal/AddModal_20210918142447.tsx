@@ -10,7 +10,7 @@ import {imgToBase64} from '../../utils/handlerFunctions'
 import CommonContext from '../../context/common'
 
 //interface
-import {IProduct} from '../../utils/interfaces'
+import {IProduct} from '../../interfaces'
 
 //api
 import {Post} from '../../api/api'
