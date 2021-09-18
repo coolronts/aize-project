@@ -36,8 +36,12 @@ const Card: React.FunctionComponent<IItemProps> = ({product}) => {
           </>
         :
           <>           
-            <div className={styles.discount}> {product.discount} %</div>   
-            <div className={styles.imageContainer}><img src={product.defaultImage} alt="product"/></div>
+              
+          
+            <div className={styles.imageContainer}><img src={product.defaultImage} alt="product"/>
+            <FiTag className={styles.discount}> </FiTag>   
+               <div className={styles.discountInfo}>{product.discount}% </div>
+            </div>
             <h4 className={styles.name}>{product.name}</h4>
             <h2 className={styles.description}>{product.description}</h2>
             <h3 className={styles.price}>{product.price} NOK</h3>

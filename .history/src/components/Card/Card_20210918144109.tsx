@@ -2,7 +2,6 @@ import React,{useContext} from 'react';
 import styles from './card.module.css';
 import {AiFillDelete} from 'react-icons/ai'
 import {FaEdit, FaPercentage,FaHashtag,FaTags} from 'react-icons/fa'
-import {FiTag} from 'react-icons/fi'
 
 //interface
 import {IItemProps} from "../../utils/interfaces"
@@ -35,8 +34,11 @@ const Card: React.FunctionComponent<IItemProps> = ({product}) => {
             </div>
           </>
         :
-          <>           
-            <div className={styles.discount}> {product.discount} %</div>   
+          <>
+            <div className={styles.discount}>
+               {product.discount} <FaPercentage/>
+               <FaTags style={{translate: '50px'}} />   
+            </div>
             <div className={styles.imageContainer}><img src={product.defaultImage} alt="product"/></div>
             <h4 className={styles.name}>{product.name}</h4>
             <h2 className={styles.description}>{product.description}</h2>

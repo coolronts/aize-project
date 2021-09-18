@@ -14,8 +14,8 @@
                 justify-content: space-between;
                 cursor: pointer;
                 width: 300px;
-                height: 380px;
-                padding: 10px 25px;
+                height: 360px;
+                padding: 25px;
                 background: #fff;
                 max-width: 260px;
                 border-radius: 20px;
@@ -25,20 +25,23 @@
             }
             
             .discount {
-                text-align: center;
                 position: absolute;
-                background-color: #dd1c1a;
-                font-weight: bold;
-                font-size: 14px;
-                color: white;
+                color: black;
+                font-size: 100px;
                 padding-left: 20px;
                 padding-top: 24px;
-                height: 65px;
-                width: 65px;
-                border-radius: 50%;
-                left: -8px;
-                top: -5px;
-                box-shadow: 0 5px 10px rgba(146, 61, 36, 0.05), 0 15px 40px rgba(165, 83, 63, 0.2);
+                right: -10px;
+                top: 50%;
+                z-index: 1;
+            }
+            
+            .discountInfo {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                padding-left: 20px;
+                padding-top: 24px;
+                color: #dd1c1a;
             }
             
             .imageContainer {
@@ -47,7 +50,6 @@
             
             .imageContainer>img {
                 width: 100%;
-                border-radius: 12px;
             }
             
             .adminControl {
@@ -77,10 +79,9 @@
             }
             
             .description {
-                padding: 4px 10px;
                 font-weight: 500;
                 font-size: 12px;
-                text-align: center;
+                text-align: justify;
                 margin-bottom: 10px;
                 line-height: normal;
                 white-space: pre-wrap;
@@ -93,11 +94,12 @@
                 text-align: center;
                 font-weight: bolder;
                 color: #dd1c1a;
+                margin-bottom: 10px;
             }
             
             .buttonContainer {
                 display: flex;
-                justify-content: center;
+                justify-content: space-around;
             }
             
             .buttonContainer>button {
