@@ -1,8 +1,7 @@
 import React,{useContext} from 'react';
 import styles from './card.module.css';
 import {AiFillDelete} from 'react-icons/ai'
-import {FaEdit, FaPercentage,FaHashtag,FaTags} from 'react-icons/fa'
-import {FiTag} from 'react-icons/fi'
+import {FaEdit} from 'react-icons/fa'
 
 //interface
 import {IItemProps} from "../../utils/interfaces"
@@ -22,7 +21,7 @@ const Card: React.FunctionComponent<IItemProps> = ({product}) => {
       <div className={styles.container}>
         {role ==='ADMIN'?
           <>
-            <div className={styles.discount}> <FaHashtag/> <FaTags/>  {product.discount} <FaPercentage/>  <FaEdit onClick={()=>{commonContext.updateIsEdit('discount');selectProduct(product)}}/> </div>
+            <div className={styles.discount}> {product.discount}   <FaEdit onClick={()=>{commonContext.updateIsEdit('discount');selectProduct(product)}}/> </div>
             <div className={styles.imageContainer}><FaEdit onClick={()=>{commonContext.updateIsEdit('image');selectProduct(product)}} className={styles.icon}/><img src={product.defaultImage} alt="product"/></div>
             <div className={styles.adminControl}>
               <AiFillDelete className={styles.icon} onClick={()=>userContext.DeleteProduct(product.id)}/>
