@@ -19,5 +19,8 @@
 }
 
 .scrollOff {
-    position: fixed;
+    background-color: red;
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
 }

@@ -18,6 +18,11 @@
     text-align: center;
 }
 
-.scrollOff {
-    position: fixed;
+.scrollOff::-webkit-scrollbar {
+    display: none;
+}
+
+{
+    background-color: red;
+    overflow: hidden;
 }

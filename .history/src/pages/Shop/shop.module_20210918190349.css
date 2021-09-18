@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    scroll-behavior: smooth;
 }
 
 .list {
@@ -18,6 +19,6 @@
     text-align: center;
 }
 
-.scrollOff {
-    position: fixed;
+.scrollOff::-webkit-scrollbar {
+    display: none;
 }

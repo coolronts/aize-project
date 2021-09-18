@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    background-color: red;
 }
 
 .list {
@@ -19,5 +20,8 @@
 }
 
 .scrollOff {
-    position: fixed;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    ;
 }

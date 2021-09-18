@@ -22,9 +22,6 @@ const Shop: React.FunctionComponent = () => {
 
   const role = userContext.role
 
-  //class 
-  const scrollOff = (add||edit) && styles.scrollOff
-
   useEffect(()=>{
     updateIsLoading(true)
     commonContext.getAllProducts()
@@ -37,7 +34,7 @@ const Shop: React.FunctionComponent = () => {
       {(add) && (<AddModal/>)}
       {(edit) && (<EditModal/>)}
       {(!isLoading) && (
-        <div className={`${styles.container} ${scrollOff}`}  >
+        <div className={classNames("container")} >
           {(role==='ADMIN' && !add) && (<div className={styles.addButton}><button type="button" onClick={() =>updateIsAdd(true)}>Add Product</button></div>)}
           <div className={styles.list}>
             {products.map((item,index)=>(

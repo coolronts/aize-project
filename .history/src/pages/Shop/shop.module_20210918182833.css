@@ -19,5 +19,8 @@
 }
 
 .scrollOff {
-    position: fixed;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    ;
 }

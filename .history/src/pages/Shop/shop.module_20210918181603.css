@@ -15,9 +15,9 @@
 
 .addButton {
     margin-top: 20px;
-    text-align: center;
+    translate: -20px;
 }
 
 .scrollOff {
-    position: fixed;
+    overflow: hidden;
 }

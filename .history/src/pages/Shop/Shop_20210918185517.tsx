@@ -20,10 +20,10 @@ const Shop: React.FunctionComponent = () => {
   const add = commonContext.isAdd
   const updateIsAdd = commonContext.updateIsAdd
 
-  const role = userContext.role
+  const completedClass = !add ? styles.container : '';
 
-  //class 
-  const scrollOff = (add||edit) && styles.scrollOff
+
+  const role = userContext.role
 
   useEffect(()=>{
     updateIsLoading(true)
@@ -37,7 +37,7 @@ const Shop: React.FunctionComponent = () => {
       {(add) && (<AddModal/>)}
       {(edit) && (<EditModal/>)}
       {(!isLoading) && (
-        <div className={`${styles.container} ${scrollOff}`}  >
+        <div className={`${styles.container} ${modalOn}`}  >
           {(role==='ADMIN' && !add) && (<div className={styles.addButton}><button type="button" onClick={() =>updateIsAdd(true)}>Add Product</button></div>)}
           <div className={styles.list}>
             {products.map((item,index)=>(

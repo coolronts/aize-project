@@ -19,5 +19,5 @@
 }
 
 .scrollOff {
-    position: fixed;
+    overflow: hidden;
 }

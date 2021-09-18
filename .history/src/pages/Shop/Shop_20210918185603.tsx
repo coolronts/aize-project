@@ -20,10 +20,10 @@ const Shop: React.FunctionComponent = () => {
   const add = commonContext.isAdd
   const updateIsAdd = commonContext.updateIsAdd
 
-  const role = userContext.role
+  const scrollOff = add && styles.scrollOff
 
-  //class 
-  const scrollOff = (add||edit) && styles.scrollOff
+
+  const role = userContext.role
 
   useEffect(()=>{
     updateIsLoading(true)

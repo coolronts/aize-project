@@ -10,6 +10,7 @@
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
     background-color: rgba(190, 190, 190, 0.56);
+    overflow-y: hidden;
 }
 
 .modal {
