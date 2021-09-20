@@ -136,7 +136,6 @@ const App: React.FunctionComponent = () => {
       <UserContextProvider value={userContextValues}>
         {(id==null || isLoading ) && <Modal/>}
         <BrowserRouter>
-          {isSearch && <Search/>}
           {!isAdd && isEdit==='' &&  <Header/>}
           <Switch>
             <Route path="/" exact component={Shop}/>

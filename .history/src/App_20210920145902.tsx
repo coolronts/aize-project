@@ -6,7 +6,6 @@ import Cart from "./pages/Cart/Cart"
 import Shop from "./pages/Shop/Shop"
 import Modal from "./components/Modal/Modal"
 import Header from "./components/Header/Header"
-import Search from "./components/Search/Search"
 
 //context
 import {UserContextProvider} from './context/user'
@@ -17,10 +16,6 @@ import {ProductCartType, IProduct} from './utils/interfaces'
 
 //api
 import {Get, Delete} from './api/api'
-
-//LogRocket
-import LogRocket from 'logrocket';
-LogRocket.init('vxyzql/e-shop');
 
 const App: React.FunctionComponent = () => {
   //States
@@ -46,9 +41,6 @@ const App: React.FunctionComponent = () => {
 
   const [isAdd, setIsAdd] = useState<boolean>(false)
   const updateIsAdd = (state:boolean)=>{setIsAdd(state)}
-
-  const [isSearch, setIsSearch] = useState<boolean>(false)
-  const updateIsSearch = (state:boolean)=>{setIsSearch(state)}
 
   
   const [selectedProduct, setSelectedProduct] = useState<IProduct>({} as IProduct)
@@ -86,13 +78,6 @@ const App: React.FunctionComponent = () => {
   }
 
   useEffect(() =>{
-    LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
-      name: 'Zahid Ronty',
-      email: 'zahid.ronty@gmail.com',
-    
-      // Add your own custom user variables here, ie:
-      subscriptionType: 'pro'
-    });
     if(id != null){
       updateIsLoading(true)
       Get.getUserCart(id)
@@ -108,35 +93,13 @@ const App: React.FunctionComponent = () => {
   },[id])
 
   const userContextValues ={Cart:{id,products},cartQty, role,addUser,addProduct, addCart, DeleteProduct}
-  const commonContextValues = {
-    selectedProduct, 
-    updateSelectedProduct, 
-
-    isLoading, 
-    updateIsLoading, 
-
-    isError, 
-    updateIsError, 
-    
-    allProducts,  
-    getAllProducts, 
-
-    isEdit, 
-    updateIsEdit, 
-
-    isAdd, 
-    updateIsAdd,
-
-    isSearch,
-    updateIsSearch
-  }
+  const commonContextValues = {selectedProduct, updateSelectedProduct, isLoading, isError, updateIsError, updateIsLoading, allProducts,  getAllProducts, isEdit, updateIsEdit, isAdd, updateIsAdd}
 
   return (
     <CommonContextProvider value={commonContextValues}>
       <UserContextProvider value={userContextValues}>
         {(id==null || isLoading ) && <Modal/>}
         <BrowserRouter>
-          {isSearch && <Search/>}
           {!isAdd && isEdit==='' &&  <Header/>}
           <Switch>
             <Route path="/" exact component={Shop}/>

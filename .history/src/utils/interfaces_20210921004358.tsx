@@ -51,9 +51,9 @@ export interface ICommon{
   isAdd:boolean,
   updateIsAdd:(state:boolean)=>void
 
-  isSearch:boolean,
-  updateIsSearch:(state:boolean)=>void,
-
+  isSearch:false,
+  updateIsSearch:(state:boolean)=>{},
+  
   allProducts:IProduct[],
   getAllProducts:()=>void,
   

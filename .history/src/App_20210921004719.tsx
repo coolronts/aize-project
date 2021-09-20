@@ -6,7 +6,6 @@ import Cart from "./pages/Cart/Cart"
 import Shop from "./pages/Shop/Shop"
 import Modal from "./components/Modal/Modal"
 import Header from "./components/Header/Header"
-import Search from "./components/Search/Search"
 
 //context
 import {UserContextProvider} from './context/user'
@@ -126,7 +125,7 @@ const App: React.FunctionComponent = () => {
 
     isAdd, 
     updateIsAdd,
-
+    
     isSearch,
     updateIsSearch
   }
@@ -136,7 +135,6 @@ const App: React.FunctionComponent = () => {
       <UserContextProvider value={userContextValues}>
         {(id==null || isLoading ) && <Modal/>}
         <BrowserRouter>
-          {isSearch && <Search/>}
           {!isAdd && isEdit==='' &&  <Header/>}
           <Switch>
             <Route path="/" exact component={Shop}/>

@@ -2,6 +2,7 @@ import React,{useEffect,useContext} from 'react'
 import styles from './shop.module.css'
 
 //components
+import Card from "../../components/Card/Card"
 import EditModal from '../../components/EditModal/EditModal'
 import AddModal from '../../components/AddModal/AddModal'
 import List from '../../components/List/List'

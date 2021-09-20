@@ -40,24 +40,15 @@ export interface IUserProp{
 
 export interface ICommon{
   isLoading:boolean,
-  updateIsLoading:(state:boolean)=>void,
-
   isError:boolean,
+  updateIsLoading:(state:boolean)=>void,
   updateIsError:(state:boolean)=>void,
-
-  isEdit:string,
-  updateIsEdit:(type:string)=>void,
-
-  isAdd:boolean,
-  updateIsAdd:(state:boolean)=>void
-
-  isSearch:boolean,
-  updateIsSearch:(state:boolean)=>void,
-
   allProducts:IProduct[],
   getAllProducts:()=>void,
-  
+  isEdit:string,
+  updateIsEdit:(type:string)=>void,
   selectedProduct: IProduct,
   updateSelectedProduct:(product:IProduct)=>void,
-  
+  isAdd:boolean,
+  updateIsAdd:(state:boolean)=>void
 }

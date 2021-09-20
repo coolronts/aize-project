@@ -38,7 +38,7 @@ const EditModal: React.FunctionComponent = () => {
     const save = ()=>{
       if(newValue){
         updateIsLoading(true)
-        if(typeof(newValue)==='string' && edit===('name'||'description'||'image'||'price'||'discount')){
+        if(typeof(newValue)==='string' && edit===('name'||'description'||'image')){
           selectedProduct[edit] = newValue
         }else if(typeof(newValue)==='number'&& edit===('price'||'discount')){
           selectedProduct.price = newValue
@@ -49,8 +49,7 @@ const EditModal: React.FunctionComponent = () => {
           updateProducts()
           setNewValue('') 
           updateIsLoading(false)
-        })
-      }     
+        }) }     
     }
     return( 
       <section className={styles.container}>

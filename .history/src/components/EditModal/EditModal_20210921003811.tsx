@@ -49,8 +49,7 @@ const EditModal: React.FunctionComponent = () => {
           updateProducts()
           setNewValue('') 
           updateIsLoading(false)
-        })
-      }     
+        }) }     
     }
     return( 
       <section className={styles.container}>

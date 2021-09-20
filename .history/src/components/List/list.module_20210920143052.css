@@ -1,0 +1,6 @@
+.list {
+    margin: 10px 10px 10px 10px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}

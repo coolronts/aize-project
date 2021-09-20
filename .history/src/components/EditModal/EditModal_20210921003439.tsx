@@ -38,10 +38,20 @@ const EditModal: React.FunctionComponent = () => {
     const save = ()=>{
       if(newValue){
         updateIsLoading(true)
-        if(typeof(newValue)==='string' && edit===('name'||'description'||'image'||'price'||'discount')){
-          selectedProduct[edit] = newValue
-        }else if(typeof(newValue)==='number'&& edit===('price'||'discount')){
-          selectedProduct.price = newValue
+        if(typeof(newValue)==='string'){
+          if(edit==='name' ){
+            selectedProduct[edit] = newValue
+          }else if(edit==='description'){
+            selectedProduct.description = newValue
+          }else if(edit==='image'){
+            selectedProduct.defaultImage = newValue
+          }
+        }else if(typeof(newValue)==='number'){
+          if(edit==='price'){
+            selectedProduct.price = newValue
+          }else if(edit==='discount'){
+            selectedProduct.discount = newValue
+          }
         }
         updateIsEdit('')
         Put.updateProduct(selectedProduct, selectedProduct.id)
@@ -49,8 +59,7 @@ const EditModal: React.FunctionComponent = () => {
           updateProducts()
           setNewValue('') 
           updateIsLoading(false)
-        })
-      }     
+        }) }     
     }
     return( 
       <section className={styles.container}>

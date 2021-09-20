@@ -36,21 +36,25 @@ const EditModal: React.FunctionComponent = () => {
     }
     
     const save = ()=>{
-      if(newValue){
-        updateIsLoading(true)
-        if(typeof(newValue)==='string' && edit===('name'||'description'||'image'||'price'||'discount')){
-          selectedProduct[edit] = newValue
-        }else if(typeof(newValue)==='number'&& edit===('price'||'discount')){
-          selectedProduct.price = newValue
-        }
+      updateIsLoading(true)
+      if(edit==='name' &&  typeof(newValue)==='string'){
+        selectedProduct.name = newValue
+      }else if(edit==='description' && typeof(newValue)==='string'){
+        selectedProduct.description = newValue
+      }else if(edit==='price' && typeof(newValue)==='number'){
+        selectedProduct.price = newValue
+      }else if(edit==='discount' && typeof(newValue)==='number'){
+        selectedProduct.discount = newValue
+      }else if(edit==='image' && typeof(newValue)==='string'){
+        selectedProduct.defaultImage = newValue
+      }
+
+      Put.updateProduct(selectedProduct, selectedProduct.id).then(()=>{
+        updateProducts()
         updateIsEdit('')
-        Put.updateProduct(selectedProduct, selectedProduct.id)
-        .then(()=>{
-          updateProducts()
-          setNewValue('') 
-          updateIsLoading(false)
-        })
-      }     
+        setNewValue('') 
+        updateIsLoading(false)
+      })      
     }
     return( 
       <section className={styles.container}>

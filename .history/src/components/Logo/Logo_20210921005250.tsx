@@ -55,9 +55,43 @@ const Logo: React.FunctionComponent<{logo:string}>= ({logo}) => {
       )}
 
       {logo==="search" && (
-        <div onClick={()=>{updateSearch(true)}} className={styles.logoContainer}>
-          <AiOutlineSearch  className={styles.icon}/>       
-        </div>
+        <>
+          { isSearch && <div className={styles.searchContainer}>
+            <input type="text" onChange={(e)=>search(e.target.value)} className={styles.searchBox}/> 
+            <MdCancel onClick={()=>updateSearch(false)}  />
+            <>
+              {isSearch && 
+                <div className={styles.suggestionContainer}>
+                  {isSearch && searchItems.map((item,index)=>{
+                    return(
+                      <div key={index} className={styles.suggestionContainer}>
+                        <div className={styles.suggestion}>
+                          <div className={styles.imageContainer}>
+                            <img src={item.defaultImage} alt="product"/>
+                          </div>
+                          
+                          <div className={styles.info}>
+                            <p className={styles.name}>{item.name}</p>
+                            <p>Price: {item.price} Nok</p>
+                            <p>Discount:  -{item.discount}%</p>
+                          </div>
+                        </div>
+                        <hr></hr>
+                      </div> 
+                     )
+                  })}
+                </div>
+              }
+            </> 
+          </div>}
+          
+          <div onClick={()=>{
+            setIsSearch(true)
+            setSearchItems([])
+            }} className={styles.logoContainer}>
+            <AiOutlineSearch  className={styles.icon}/>       
+          </div>
+        </>
       )}
     </>
   )

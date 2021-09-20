@@ -55,7 +55,10 @@ const Logo: React.FunctionComponent<{logo:string}>= ({logo}) => {
       )}
 
       {logo==="search" && (
-        <div onClick={()=>{updateSearch(true)}} className={styles.logoContainer}>
+        <div onClick={()=>{
+          updateSearch(true)
+          setSearchItems([])
+          }} className={styles.logoContainer}>
           <AiOutlineSearch  className={styles.icon}/>       
         </div>
       )}
