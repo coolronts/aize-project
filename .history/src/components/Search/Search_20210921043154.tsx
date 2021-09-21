@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import styles from './search.module.css'
-import { useDebouncedCallback } from 'use-debounce';
+import { useDebounce } from 'use-debounce';
 
 //icons
 import {MdCancel} from "react-icons/md"
@@ -22,20 +22,17 @@ const Search: React.FunctionComponent= () => {
   const isSearch = commonContext.isSearch
   const updateSearch = commonContext.updateIsSearch
 
-  const debounced = useDebouncedCallback(
-    (keyword:any) => {
-      if(keyword.length===0){updateSearch(false)}
-      else{
-        updateSearch(true)
-        Get.searchProduct(keyword)
-        .then(result => {setSearchItems(()=>result.slice(0,5))})
-      }
-    },2000);
-
-
+  const search = (keyword:any) =>{
+    if(keyword.length===0){updateSearch(false)}
+    else{
+      updateSearch(true)
+      Get.searchProduct(keyword)
+      .then(result => {setSearchItems(()=>result.slice(0,5))})
+    }
+  }
   return (
     <div className={styles.searchContainer}>
-      <input type="text" onChange={(e)=>debounced(e.target.value)} className={styles.searchBox}/> 
+      <input type="text" onChange={(e)=>search(e.target.value)} className={styles.searchBox}/> 
       <MdCancel onClick={()=>updateSearch(false)} />      
       <div className={styles.suggestionContainer}>
         {isSearch && searchItems.map((item,index)=>{

@@ -30,7 +30,9 @@ const Search: React.FunctionComponent= () => {
         Get.searchProduct(keyword)
         .then(result => {setSearchItems(()=>result.slice(0,5))})
       }
-    },2000);
+    },
+    1000
+  );
 
 
   return (
